@@ -1,0 +1,58 @@
+html {
+    --text-emphasis-color: #E3B873;
+    --circle-emphasis-color: #fff;
+    --time-animation: 1s;
+    --time-animation-half: 0.5s;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+p {
+    margin: 0;
+}
+
+
+.h1 {
+    font-family: Yeseva One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 37px;
+    letter-spacing: -0.07em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+.h2 {
+    font-family: Yeseva One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+.container {
+    background-color: black;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.page1-div {
+    margin: 0 auto;
+    height: 783px;
+    width: 1440px;
+    padding: 107px 134px 0 134px;
+    box-sizing: border-box;
+}
