@@ -55,7 +55,7 @@ function redrawPage1(selectedPage) {
 
 $page1ArrowRight.addEventListener('click', () => {
     page1SelectedMenu++;
-    if (page1SelectedMenu > 2) page1SelectedMenu=0;
+    if (page1SelectedMenu > objects.length-1) page1SelectedMenu=0;
     redrawPage1(page1SelectedMenu);
 });
 
