@@ -24,32 +24,45 @@ function changeImage() {
 };
 
 
-function changeClassesMenu(number, change) {
+function changeClassesMenuCircles(number, change) {
     if (change === "add") {
         $page1Circles[number].classList.add('page1-circle-selected');
-        $page1MenusDivs[number].classList.add('page1-menu-item-div-selected');
-        $page1MenusItems[number].classList.add('page1-menu-item-selected');
     } else if (change === "remove") {
         $page1Circles[number].classList.remove('page1-circle-selected');
+    }
+};
+
+
+function changeClassesMenuDivs(number, change) {
+    if (change === "add") {
+        $page1MenusDivs[number].classList.add('page1-menu-item-div-selected');
+    } else if (change === "remove") {
         $page1MenusDivs[number].classList.remove('page1-menu-item-div-selected');
+    }
+};
+
+
+function changeClassesMenuItems(number, change) {
+    if (change === "add") {
+        $page1MenusItems[number].classList.add('page1-menu-item-selected');
+    } else if (change === "remove") {
         $page1MenusItems[number].classList.remove('page1-menu-item-selected');  
     }
 };
 
 
-function redrawPage1(selectedPage) {
+function redrawPage1(selectedObject) {
     changeImage();
-    $page1Circles.forEach((item,number) => {
-        $page1InfoText[0].innerHTML = objects[selectedPage].city;
-        $page1InfoText[1].innerHTML = objects[selectedPage].area;
-        $page1InfoText[2].innerHTML = objects[selectedPage].time;
-        $page1InfoText[3].innerHTML = objects[selectedPage].cost;
-        if (number === selectedPage) {
-            changeClassesMenu(number, "add");
-        } else {
-            changeClassesMenu(number, "remove");
-        };
-    });
+    $page1InfoText[0].innerHTML = objects[selectedObject].city;
+    $page1InfoText[1].innerHTML = objects[selectedObject].area;
+    $page1InfoText[2].innerHTML = objects[selectedObject].time;
+    $page1InfoText[3].innerHTML = objects[selectedObject].cost;
+    $page1Circles.forEach((item,number) => {changeClassesMenuCircles(number, "remove");});
+    $page1Circles.forEach((item,number) => {changeClassesMenuDivs(number, "remove");});
+    $page1Circles.forEach((item,number) => {changeClassesMenuItems(number, "remove");});
+    changeClassesMenuCircles(selectedObject, "add");
+    changeClassesMenuDivs(selectedObject, "add");
+    changeClassesMenuItems(selectedObject, "add");
 };
 
 
